@@ -3,6 +3,20 @@ class ArtistsController < ApplicationController
     @artists = Artist.all
   end
 
+  # def show
+  #   if params[:song_id]
+  #     @artist = Artist.find_by(id: params[:artist_id])
+  #     @song = @artist.songs.find_by(id: params[:id])
+  #     if @artist.nil?
+  #       binding.pry
+  #       redirect_to artists_path, alert: "Artist not found"
+  #     end
+  #   else
+  #
+  #     @artist = Artist.find_by(params[:id])
+  #   end
+  # end
+
   def show
     @artist = Artist.find(params[:id])
   end
