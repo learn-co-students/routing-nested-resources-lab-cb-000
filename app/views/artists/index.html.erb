@@ -2,6 +2,10 @@
 <ul>
   <% @artists.each do |artist| %>
     <li><%= link_to artist.name, artist_path(artist) %></li>
+
+    <!--  all of an artists songs, renders on songs#index
+
+  -->
     <li><%= link_to artist.name, artist_songs_path(artist) %></li>
   <% end %>
 </ul>
