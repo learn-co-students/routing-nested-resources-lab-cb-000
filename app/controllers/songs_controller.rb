@@ -9,14 +9,27 @@ class SongsController < ApplicationController
     end
   
   rescue ActiveRecord::RecordNotFound
-    flash[:notice] = "Could not Find Artist"
+    flash[:notice] = "Artist not found"
     redirect_to artists_path
+
+  # could probably, alternately, use a rescue block within the if statement itself
+  # "rescue ActiveRecord::..." won't work within the if satement
   
   end
 
 
   def show
+
+    if params[:artist_id]
+      @song = Song.find_by(artist_id: params[:artist_id], id: params[:id])
+    else
       @song = Song.find(params[:id])
+    end
+
+  rescue ActiveRecord::RecordNotFound
+    flas[:alert] = "Song not Found"
+    redirect_to artist_songs_path
+    
   end
 
   def new
