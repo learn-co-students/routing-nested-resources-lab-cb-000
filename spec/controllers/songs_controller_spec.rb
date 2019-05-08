@@ -32,7 +32,8 @@ RSpec.describe SongsController do
 
     it "redirects to artists songs when artist song not found" do
       get :show, id: 12345, artist_id: @artist.id
-      expect(controller).to set_flash[:alert]
+      #expect(controller).to set_flash[:alert]
+      expect(flash[:alert]).to be_present
       expect(response).to redirect_to artist_songs_path(@artist)
     end
 
