@@ -1,20 +1,24 @@
 source 'https://rubygems.org'
 
-gem 'rails', '4.2.5'
-gem 'sqlite3'
-gem 'sass-rails', '~> 5.0'
-gem 'uglifier', '>= 1.3.0'
-gem 'jbuilder', '~> 2.0'
-gem 'sdoc', '~> 0.4.0', group: :doc
+gem 'rails', '5.0.7.1'
+gem 'coffee-rails'
+gem 'jquery-rails'
+gem 'sass-rails'
+gem 'sdoc', '~> 0.4.0',          group: :doc
+gem 'uglifier'
+gem 'bootsnap'
+gem 'turbolinks'
+
+gem 'sqlite3', '~>1.3.6'
 
 group :development, :test do
-  gem 'pry'
-  gem 'capybara'
-  gem 'rspec-rails'
-  gem 'shoulda'
+  gem 'rack_session_access'
+  gem "capybara"
+  gem "database_cleaner"
+  gem "pry-byebug"
+  gem "rspec-rails"
 end
 
-group :development do
-  gem 'web-console', '~> 2.0'
+group :test do
+  gem 'rspec-collection_matchers'
 end
-
